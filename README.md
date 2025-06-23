@@ -1,10 +1,10 @@
 # AIBD Angular Template
 
-This project provides a Angular boilerplate template based on Angular CLI version 19.2.
+This project provides a Angular boilerplate template based on Angular CLI version 20.
 
 ## Features
 
-- **Angular 19.2**: Latest Angular with improved performance and features
+- **Angular 20**: Latest Angular with improved performance and features
 - **PNPM Package Manager**: Fast, disk space efficient package manager
 - **TailwindCSS 3 Integration**: Utility-first CSS framework for rapid UI development
 - **Testing Setup**: Pre-configured with Jasmine and [Angular Testing Library](https://testing-library.com/docs/angular-testing-library/intro/)
