@@ -85,15 +85,18 @@
         <!-- Recipe Grid -->
         <div id="recipeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10" data-component="UiRecipeGrid">
             <!-- Recipe Card 1 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-orange-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.3s;" data-component="UiRecipeCard">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.3s;" onclick="openRecipeModal('tropical')" data-component="UiRecipeCard">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=240&fit=crop" alt="Tropical Paradise Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Tropical Paradise Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">A refreshing blend of mango, pineapple, and coconut milk that transports you to a tropical island.</p>
                     <div class="flex flex-wrap gap-2" data-component="UiTagList">
-                        <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Vegan</span>
-                        <span class="px-2 py-1 bg-orange-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Summer</span>
-                        <span class="px-2 py-1 bg-purple-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Breakfast</span>
+                        <span class="px-2 py-1 bg-transparent border border-emerald-500 text-emerald-500 text-xs font-medium rounded-full" data-component="UiTag">Vegan</span>
+                        <span class="px-2 py-1 bg-transparent border border-orange-500 text-orange-500 text-xs font-medium rounded-full" data-component="UiTag">Summer</span>
+                        <span class="px-2 py-1 bg-transparent border border-purple-500 text-purple-500 text-xs font-medium rounded-full" data-component="UiTag">Breakfast</span>
                     </div>
                 </div>
             </div>

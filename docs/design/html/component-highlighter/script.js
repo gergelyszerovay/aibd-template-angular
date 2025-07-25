@@ -33,57 +33,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isPopupOpen = false;
 
-    // 3. Dynamically build the component tree from the DOM
+    // 3. Dynamically build the component instance tree from the DOM's hierarchy
     function buildTreeFromDOM() {
-        const tree = {};
-        const nodes = {}; // Helper to quickly find nodes in the tree
+        const elementToNodeMap = new Map();
+        const roots = [];
 
+        // First pass: create a node for each component instance
         document.querySelectorAll('[data-component]').forEach(element => {
-            const name = element.dataset.component;
+            elementToNodeMap.set(element, {
+                name: element.dataset.component,
+                children: []
+            });
+        });
 
-            // Skip if we've already placed this component type in the tree
-            if (nodes[name]) {
-                return;
-            }
-
-            const parentEl = element.parentElement.closest('[data-component]');
-
-            if (parentEl) {
-                const parentName = parentEl.dataset.component;
-                const parentNode = nodes[parentName];
-                
-                // Ensure the parent is already in the tree before adding a child
+        // Second pass: establish parent-child relationships for the instance tree
+        elementToNodeMap.forEach((node, element) => {
+            const parentElement = element.parentElement.closest('[data-component]');
+            if (parentElement) {
+                const parentNode = elementToNodeMap.get(parentElement);
                 if (parentNode) {
-                    parentNode[name] = {};
-                    nodes[name] = parentNode[name];
+                    parentNode.children.push(node);
                 }
             } else {
-                // This is a root-level component
-                tree[name] = {};
-                nodes[name] = tree[name];
+                roots.push(node);
             }
         });
-        return tree;
+        
+        return roots; // Return the full instance tree
     }
     
-    // 4. Find all unique components and populate the list, respecting the tree structure
+    // 4. Populate the list from the generated component tree
     const componentTree = buildTreeFromDOM();
-    const componentsOnPage = new Set(Array.from(document.querySelectorAll('[data-component]')).map(el => el.dataset.component));
+    let checkboxIdCounter = 0; // Counter for unique checkbox IDs
 
-    function buildComponentList(tree, level) {
-        Object.keys(tree).sort().forEach(name => {
-            if (componentsOnPage.has(name)) {
-                const listItem = document.createElement('li');
-                listItem.classList.add(`level-${level}`);
-                listItem.innerHTML = `
-                    <input type="checkbox" id="comp-check-${name}" data-component-name="${name}" class="component-checkbox">
-                    <label for="comp-check-${name}">${name}</label>
-                `;
-                componentList.appendChild(listItem);
-                
-                if (tree[name] && Object.keys(tree[name]).length > 0) {
-                    buildComponentList(tree[name], level + 1);
-                }
+    function buildComponentList(nodes, level) {
+        nodes.forEach(node => {
+            const name = node.name;
+            const listItem = document.createElement('li');
+            const checkboxId = `comp-check-${checkboxIdCounter++}`;
+
+            listItem.classList.add(`level-${level}`);
+            listItem.innerHTML = `
+                <input type="checkbox" id="${checkboxId}" data-component-name="${name}" class="component-checkbox">
+                <label for="${checkboxId}">${name}</label>
+            `;
+            componentList.appendChild(listItem);
+            
+            if (node.children.length > 0) {
+                buildComponentList(node.children, level + 1);
             }
         });
     }
