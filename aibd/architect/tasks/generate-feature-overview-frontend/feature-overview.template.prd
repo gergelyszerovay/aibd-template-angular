@@ -1,0 +1,13 @@
+{{SITEMAP_CONTENT}}
+
+---
+
+# {{PROJECT_NAME}}: Feature Overview
+
+This document provides a summary of the core features planned for {{PROJECT_NAME}}. For each feature, it lists the primary objective and the public, page-level components that belong to it, along with their corresponding routes.
+
+---
+
+{{FEATURE_SECTIONS}}
+
+---

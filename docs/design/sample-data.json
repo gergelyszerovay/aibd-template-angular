@@ -1,0 +1,180 @@
+[
+    {
+      "id": "berry-banana-smoothie",
+      "name": "Berry Banana Smoothie",
+      "description": "Start your day with this antioxidant-rich breakfast smoothie. Packed with vitamin C from mixed berries and potassium from banana, it's naturally sweet and creamy. Perfect for busy mornings when you need sustained energy.",
+      "servings": 2,
+      "prepTime": "5 minutes",
+      "difficulty": "easy",
+      "ingredients": [
+        {
+          "name": "banana",
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "name": "mixed berries",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "milk or yogurt",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "honey",
+          "amount": "1",
+          "unit": "tablespoon"
+        },
+        {
+          "name": "ice cubes",
+          "amount": "4-6",
+          "unit": "pieces"
+        }
+      ],
+      "instructions": "Add banana, berries, and milk to blender. Drizzle in honey for natural sweetness. Add ice cubes for desired consistency. Blend on high for 60-90 seconds until smooth. Pour into glasses and serve immediately.",
+      "tags": ["breakfast", "antioxidant", "quick", "kid-friendly", "vitamin-c"],
+      "tips": [
+        "Use frozen berries for a thicker consistency",
+        "Greek yogurt adds extra protein",
+        "Adjust honey to taste preference"
+      ]
+    },
+    {
+      "id": "green-power-smoothie",
+      "name": "Green Power Smoothie",
+      "description": "Fuel your body with this nutrient-dense green smoothie that doesn't taste like vegetables. The banana and lime mask the spinach flavor while avocado creates an incredibly creamy texture. Loaded with healthy fats, fiber, and plant-based protein for sustained energy.",
+      "servings": 1,
+      "prepTime": "5 minutes",
+      "difficulty": "easy",
+      "ingredients": [
+        {
+          "name": "fresh spinach",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "banana",
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "name": "avocado",
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "name": "coconut water",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "chia seeds",
+          "amount": "1",
+          "unit": "tablespoon"
+        },
+        {
+          "name": "lime juice",
+          "amount": "1",
+          "unit": "squeeze"
+        }
+      ],
+      "instructions": "Add spinach and coconut water to blender first. Add banana, avocado, and chia seeds. Squeeze fresh lime juice over ingredients. Blend on high for 90 seconds until completely smooth. Add more coconut water if needed for desired consistency.",
+      "tags": ["healthy", "green", "vegan", "protein", "omega-3", "detox"],
+      "tips": [
+        "Use baby spinach for milder flavor",
+        "Freeze banana for thicker texture",
+        "Let chia seeds soak for 5 minutes for better texture"
+      ]
+    },
+    {
+      "id": "tropical-paradise",
+      "name": "Tropical Paradise",
+      "description": "Transport yourself to a tropical island with this refreshing smoothie. Sweet pineapple and mango provide natural enzymes for digestion while coconut milk adds rich creaminess. This vitamin-packed treat feels like vacation in a glass.",
+      "servings": 2,
+      "prepTime": "5 minutes",
+      "difficulty": "easy",
+      "ingredients": [
+        {
+          "name": "pineapple chunks",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "mango",
+          "amount": "1/2",
+          "unit": "large"
+        },
+        {
+          "name": "banana",
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "name": "coconut milk",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "shredded coconut",
+          "amount": "1",
+          "unit": "tablespoon"
+        }
+      ],
+      "instructions": "Add coconut milk to blender first. Add pineapple, mango, and banana. Sprinkle in shredded coconut. Blend on high for 60 seconds until smooth. Pour into chilled glasses and garnish with coconut flakes.",
+      "tags": ["tropical", "vegan", "dairy-free", "vitamin-a", "digestive", "summer"],
+      "tips": [
+        "Use frozen fruit for a thicker, colder smoothie",
+        "Full-fat coconut milk creates the richest texture",
+        "Add a handful of ice for extra chill"
+      ]
+    },
+    {
+      "id": "chocolate-peanut-butter",
+      "name": "Chocolate Peanut Butter",
+      "description": "Indulge in this protein-rich smoothie that tastes like a milkshake but fuels your body. Natural peanut butter provides healthy fats and protein while cocoa powder delivers antioxidants. Perfect post-workout treat or satisfying breakfast replacement.",
+      "servings": 1,
+      "prepTime": "5 minutes",
+      "difficulty": "easy",
+      "ingredients": [
+        {
+          "name": "banana",
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "name": "natural peanut butter",
+          "amount": "2",
+          "unit": "tablespoons"
+        },
+        {
+          "name": "unsweetened cocoa powder",
+          "amount": "1",
+          "unit": "tablespoon"
+        },
+        {
+          "name": "milk",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "name": "honey",
+          "amount": "1",
+          "unit": "tablespoon"
+        },
+        {
+          "name": "ice cubes",
+          "amount": "4-6",
+          "unit": "pieces"
+        }
+      ],
+      "instructions": "Add milk and peanut butter to blender. Add banana, cocoa powder, and honey. Add ice cubes for desired thickness. Blend on high for 90 seconds until completely smooth. Pour into glass and enjoy immediately.",
+      "tags": ["protein", "post-workout", "indulgent", "filling", "chocolate", "breakfast"],
+      "tips": [
+        "Use frozen banana for thicker consistency",
+        "Almond milk works great for dairy-free option",
+        "Add a pinch of cinnamon for extra flavor"
+      ]
+    }
+]

@@ -1,0 +1,29 @@
+# {{PROJECT_NAME}}: Feature and Tool Overview
+
+This document provides a summary of the core features for the {{PROJECT_NAME}} MCP Server, organized by category.
+
+---
+
+## 1. Tool-Providing Features
+
+This section lists features that expose functions as tools for the MCP server. Each tool's name, description, input, and output are provided.
+
+{{TOOL_FEATURES_SECTION}}
+
+---
+
+## 2. Other Core Features
+
+This section describes core features that provide essential application logic but do not directly expose tools.
+
+{{OTHER_FEATURES_SECTION}}
+
+---
+
+## 3. Shared Features
+
+This section describes reusable components, types, and utilities located in the `src/shared` directory.
+
+{{SHARED_FEATURES_SECTION}}
+
+--- 

@@ -45,3 +45,8 @@ Thumbs.db
 .angular
 .pnpm-store
 .temp
+
+.host
+.transport
+.bmad-core
+.cursor
