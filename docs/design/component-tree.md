@@ -15,7 +15,7 @@
     - `UiRecipeGrid`
       - `UiRecipeCard (xN)`
         - `UiTagList (shared)`
-    - `UiErrorState`
+    - `UiEmptyState`
       - `UiIngredientChip (xN) (shared)`
   - `UiRecipeModal (conditionally rendered)`
     - `UiTagList (shared)`

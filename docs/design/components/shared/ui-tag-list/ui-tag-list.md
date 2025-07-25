@@ -15,10 +15,9 @@ The `UiTagList` component is a container for displaying a collection of `UiTag` 
 
 ## Inputs (Props)
 
-| Prop Name | Type     | Description                                                      | Required |
-| --------- | -------- | ---------------------------------------------------------------- | -------- |
-| `tags`    | `array`  | An array of strings or objects representing the tags to display. | Yes      |
-| `colors`  | `object` | An object mapping tag labels to color themes.                    | No       |
+| Prop Name | Type    | Description                                                                    | Required |
+| --------- | ------- | ------------------------------------------------------------------------------ | -------- |
+| `tags`    | `Tag[]` | An array of tag objects to display. See `docs/design/data-structures/tags.md`. | Yes      |
 
 ## Outputs (Events)
 

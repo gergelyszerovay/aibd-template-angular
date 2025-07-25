@@ -6,10 +6,9 @@ The `UiTag` component is a small, non-interactive element used to display a cate
 
 ## Inputs (Props)
 
-| Prop Name | Type     | Description                                                             | Required |
-| --------- | -------- | ----------------------------------------------------------------------- | -------- |
-| `label`   | `string` | The text to display within the tag (e.g., "Vegan").                     | Yes      |
-| `color`   | `string` | The color theme for the tag, used for the background (e.g., "emerald"). | No       |
+| Prop Name | Type  | Description                                                           | Required |
+| --------- | ----- | --------------------------------------------------------------------- | -------- |
+| `tag`     | `Tag` | The tag object to display. See `docs/design/data-structures/tags.md`. | Yes      |
 
 ## Outputs (Events)
 
