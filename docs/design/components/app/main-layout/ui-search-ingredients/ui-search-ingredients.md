@@ -29,6 +29,25 @@ The `UiSearchIngredients` component provides the main search interface for the a
 
 ## States
 
-- **Default:** The standard appearance of the search bar.
-- **Focused:** When the user has clicked into the input field.
-- **With Suggestions:** When autocomplete suggestions are visible.
+### 1. Default (With Selections)
+
+- **Description:** The standard appearance of the search bar when one or more ingredients have been selected.
+- **Visuals:**
+  - Selected ingredients are displayed as `UiIngredientChip` components inside the search container.
+  - An "X" icon is visible on the right to clear all selected ingredients.
+  - The text input field is available for adding more ingredients.
+
+### 2. Empty
+
+- **Description:** The state when no ingredients are selected.
+- **Visuals:**
+  - A placeholder text prompts the user to enter ingredients (e.g., "Banana, spinach, mango...").
+  - The "clear all" button is hidden.
+
+### 3. Focused with Autocomplete
+
+- **Description:** The state when the user clicks into the text input and begins typing.
+- **Visuals:**
+  - A dropdown list of suggested ingredients appears below the search bar.
+  - The search input has a subtle glow effect to indicate focus.
+  - Suggestions are filtered based on the user's input.
