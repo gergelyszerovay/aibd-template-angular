@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="component-viewer-controls">
                 <div>
-                    <button id="select-all-btn" title="Select All / None"><i data-lucide="check-square"></i></button>
-                    <button id="expand-all-btn" title="Expand All"><i data-lucide="unfold-vertical"></i></button>
-                    <button id="collapse-all-btn" title="Collapse All"><i data-lucide="fold-vertical"></i></button>
-                    <button id="refresh-component-tree" title="Refresh Tree">⟳</button>
+                    <button id="select-all-btn" title="Select All / None"><i data-lucide="square-check"></i></button>
+                    <button id="expand-all-btn" title="Expand All"><i data-lucide="chevrons-down-up"></i></button>
+                    <button id="collapse-all-btn" title="Collapse All"><i data-lucide="chevrons-up-down"></i></button>
+                    <button id="refresh-component-tree" title="Refresh Tree"><i data-lucide="rotate-cw"></i></button>
                 </div>
             </div>
             <ul id="component-viewer-list" class="component-viewer-list"></ul>
