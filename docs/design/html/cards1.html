@@ -30,10 +30,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Hero Section -->
         <div class="text-center mb-12 slide-up" style="animation-delay: 0.1s;">
-            <h2 class="text-4xl font-semibold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight mb-4">Find Your Perfect Smoothie</h2>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                Discover delicious smoothie recipes<br>
-                based on the ingredients you have at home.
+            <h2 class="text-4xl font-semibold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight mb-4 text-balance">Find Your Perfect Smoothie</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto text-balance">
+                Discover delicious smoothie recipes based on the ingredients you have at home.
             </p>
         </div>
 
@@ -66,7 +65,7 @@
                                 </button>
                             </span>
                         </div>
-                        <input type="text" id="ingredientInput" placeholder="Type ingredients like banana, spinach, mango..." class="flex-1 min-w-[200px] outline-none placeholder-gray-400 text-gray-100 bg-transparent">
+                        <input type="text" id="ingredientInput" placeholder="Banana, spinach, mango..." class="flex-1 min-w-[200px] outline-none placeholder-gray-400 text-gray-100 bg-transparent">
                         <button id="clearAll" class="text-gray-400 hover:text-pink-400 transition-colors absolute top-3 right-3" style="line-height: 1;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px]" style="width: 20px; height: 20px; color: rgb(244, 114, 182);"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
                         </button>
@@ -85,85 +84,103 @@
         <!-- Recipe Grid -->
         <div id="recipeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             <!-- Recipe Card 1 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-orange-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.3s;" onclick="openRecipeModal('tropical')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.3s;" onclick="openRecipeModal('tropical')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&amp;h=240&amp;fit=crop" alt="Tropical Paradise Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Tropical Paradise Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">A refreshing blend of mango, pineapple, and coconut milk that transports you to a tropical island.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full">Vegan</span>
-                        <span class="px-2 py-1 bg-orange-800 text-white text-xs font-medium rounded-full">Summer</span>
-                        <span class="px-2 py-1 bg-purple-800 text-white text-xs font-medium rounded-full">Breakfast</span>
+                        <span class="px-2 py-1 bg-transparent border border-emerald-500 text-emerald-500 text-xs font-medium rounded-full">Vegan</span>
+                        <span class="px-2 py-1 bg-transparent border border-orange-500 text-orange-500 text-xs font-medium rounded-full">Summer</span>
+                        <span class="px-2 py-1 bg-transparent border border-purple-500 text-purple-500 text-xs font-medium rounded-full">Breakfast</span>
                     </div>
                 </div>
             </div>
 
             <!-- Recipe Card 2 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-green-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.4s;" onclick="openRecipeModal('green')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.4s;" onclick="openRecipeModal('green')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&amp;h=240&amp;fit=crop" alt="Green Goddess Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Green Goddess Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">Packed with spinach, avocado, and banana for a nutrient-rich start to your day.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full">Vegan</span>
-                        <span class="px-2 py-1 bg-lime-800 text-white text-xs font-medium rounded-full">Healthy</span>
-                        <span class="px-2 py-1 bg-purple-800 text-white text-xs font-medium rounded-full">Breakfast</span>
+                        <span class="px-2 py-1 bg-transparent border border-emerald-500 text-emerald-500 text-xs font-medium rounded-full">Vegan</span>
+                        <span class="px-2 py-1 bg-transparent border border-lime-500 text-lime-500 text-xs font-medium rounded-full">Healthy</span>
+                        <span class="px-2 py-1 bg-transparent border border-purple-500 text-purple-500 text-xs font-medium rounded-full">Breakfast</span>
                     </div>
                 </div>
             </div>
 
             <!-- Recipe Card 3 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-pink-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.5s;" onclick="openRecipeModal('berry')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.5s;" onclick="openRecipeModal('berry')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&amp;h=240&amp;fit=crop" alt="Berry Blast Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Berry Blast Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">A delicious mix of strawberries, blueberries, and raspberry with yogurt and honey.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-red-800 text-white text-xs font-medium rounded-full">Antioxidants</span>
-                        <span class="px-2 py-1 bg-pink-800 text-white text-white text-xs font-medium rounded-full">Sweet</span>
-                        <span class="px-2 py-1 bg-purple-800 text-white text-xs font-medium rounded-full">Breakfast</span>
+                        <span class="px-2 py-1 bg-transparent border border-red-500 text-red-500 text-xs font-medium rounded-full">Antioxidants</span>
+                        <span class="px-2 py-1 bg-transparent border border-pink-500 text-pink-500 text-xs font-medium rounded-full">Sweet</span>
+                        <span class="px-2 py-1 bg-transparent border border-purple-500 text-purple-500 text-xs font-medium rounded-full">Breakfast</span>
                     </div>
                 </div>
             </div>
 
             <!-- Recipe Card 4 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-amber-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.6s;" onclick="openRecipeModal('chocolate')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.6s;" onclick="openRecipeModal('chocolate')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&amp;h=240&amp;fit=crop" alt="Chocolate Banana Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Chocolate Banana Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">Rich and creamy smoothie with banana, cocoa powder, and almond milk for a guilt-free treat.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full">Vegan</span>
-                        <span class="px-2 py-1 bg-amber-800 text-white text-xs font-medium rounded-full">Dessert</span>
-                        <span class="px-2 py-1 bg-indigo-800 text-white text-xs font-medium rounded-full">Protein</span>
+                        <span class="px-2 py-1 bg-transparent border border-emerald-500 text-emerald-500 text-xs font-medium rounded-full">Vegan</span>
+                        <span class="px-2 py-1 bg-transparent border border-amber-500 text-amber-500 text-xs font-medium rounded-full">Dessert</span>
+                        <span class="px-2 py-1 bg-transparent border border-indigo-500 text-indigo-500 text-xs font-medium rounded-full">Protein</span>
                     </div>
                 </div>
             </div>
 
             <!-- Recipe Card 5 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.7s;" onclick="openRecipeModal('citrus')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.7s;" onclick="openRecipeModal('citrus')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Citrus Sunrise Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Citrus Sunrise Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">A vibrant blend of orange, grapefruit, and lemon with a hint of ginger for an energizing start.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full">Vegan</span>
-                        <span class="px-2 py-1 bg-yellow-800 text-white text-xs font-medium rounded-full">Vitamin C</span>
-                        <span class="px-2 py-1 bg-orange-800 text-white text-xs font-medium rounded-full">Energizing</span>
+                        <span class="px-2 py-1 bg-transparent border border-emerald-500 text-emerald-500 text-xs font-medium rounded-full">Vegan</span>
+                        <span class="px-2 py-1 bg-transparent border border-yellow-500 text-yellow-500 text-xs font-medium rounded-full">Vitamin C</span>
+                        <span class="px-2 py-1 bg-transparent border border-orange-500 text-orange-500 text-xs font-medium rounded-full">Energizing</span>
                     </div>
                 </div>
             </div>
 
             <!-- Recipe Card 6 -->
-            <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:border-indigo-400 transition-all cursor-pointer slide-up fruit-glow flex flex-col h-full" style="animation-delay: 0.8s;" onclick="openRecipeModal('protein')">
+            <div class="group bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-yellow-400 transition-all cursor-pointer slide-up flex flex-col h-full relative" style="animation-delay: 0.8s;" onclick="openRecipeModal('protein')">
+                <div class="absolute top-4 right-4 bg-gray-900 bg-opacity-75 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </div>
                 <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&amp;h=240&amp;fit=crop" alt="Protein Power Smoothie" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-white mb-2">Protein Power Smoothie</h3>
                     <p class="text-gray-300 text-sm mb-4 flex-1">Perfect post-workout blend with banana, peanut butter, oats, and protein powder for muscle recovery.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-indigo-800 text-white text-xs font-medium rounded-full">Protein</span>
-                        <span class="px-2 py-1 bg-teal-800 text-white text-xs font-medium rounded-full">Post-workout</span>
-                        <span class="px-2 py-1 bg-amber-800 text-white text-xs font-medium rounded-full">Filling</span>
+                        <span class="px-2 py-1 bg-transparent border border-indigo-500 text-indigo-500 text-xs font-medium rounded-full">Protein</span>
+                        <span class="px-2 py-1 bg-transparent border border-teal-500 text-teal-500 text-xs font-medium rounded-full">Post-workout</span>
+                        <span class="px-2 py-1 bg-transparent border border-amber-500 text-amber-500 text-xs font-medium rounded-full">Filling</span>
                     </div>
                 </div>
             </div>
@@ -192,10 +209,10 @@
                     </div>
                     
                     <div>
-                        <h4 class="text-lg font-semibold text-white mb-3">Instructions</h4>
-                        <ol id="modalInstructions" class="space-y-2 text-gray-300">
-                            <!-- Instructions will be populated here -->
-                        </ol>
+                        <h4 class="text-lg font-semibold text-white mb-3">Pro Tips</h4>
+                        <ul id="modalProTips" class="space-y-2 text-gray-300 list-disc pl-4">
+                            <!-- Pro Tips will be populated here -->
+                        </ul>
                     </div>
                 </div>
                 
@@ -314,42 +331,54 @@
                 image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=240&fit=crop',
                 ingredients: ['1 cup mango chunks', '1/2 cup pineapple chunks', '1/2 cup coconut milk', '1 banana', '1 tbsp honey', '1/2 cup ice'],
                 instructions: ['Add all ingredients to blender', 'Blend until smooth and creamy', 'Pour into glass and serve immediately', 'Garnish with coconut flakes if desired'],
-                tags: ['Vegan', 'Summer', 'Breakfast']
+                tags: ['Vegan', 'Summer', 'Breakfast'],
+                tips: ['Use frozen fruit for a thicker, colder smoothie', 'Full-fat coconut milk creates the richest texture', 'Add a handful of ice for extra chill'],
+                healthAffects: ['Boosts immunity (vitamin C)', 'Aids digestion (enzymes from pineapple)', 'Hydrating and rich in electrolytes']
             },
             green: {
                 title: 'Green Goddess Smoothie',
                 image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&h=240&fit=crop',
                 ingredients: ['2 cups spinach', '1/2 avocado', '1 banana', '1 cup almond milk', '1 tbsp honey', '1/2 cup ice'],
                 instructions: ['Add spinach and almond milk first', 'Add remaining ingredients', 'Blend until completely smooth', 'Serve in a chilled glass'],
-                tags: ['Vegan', 'Healthy', 'Breakfast']
+                tags: ['Vegan', 'Healthy', 'Breakfast'],
+                tips: ['Use baby spinach for a milder flavor', 'Freeze banana ahead of time for a thicker texture', 'Let chia seeds soak for 5 minutes for better blending'],
+                healthAffects: ['Detoxifying and cleansing', 'Improves digestion with high fiber', 'Rich in vitamins and minerals']
             },
             berry: {
                 title: 'Berry Blast Smoothie',
                 image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&h=240&fit=crop',
                 ingredients: ['1/2 cup strawberries', '1/2 cup blueberries', '1/4 cup raspberries', '1 cup yogurt', '2 tbsp honey', '1/2 cup ice'],
                 instructions: ['Combine all berries in blender', 'Add yogurt and honey', 'Blend until smooth', 'Add ice and blend again briefly'],
-                tags: ['Antioxidants', 'Sweet', 'Breakfast']
+                tags: ['Antioxidants', 'Sweet', 'Breakfast'],
+                tips: ['Use frozen berries for a thicker consistency', 'Greek yogurt adds extra protein and creaminess', 'Adjust honey to your taste preference'],
+                healthAffects: ['Rich in antioxidants for skin health', 'Boosts the immune system', 'Good source of Vitamin C']
             },
             chocolate: {
                 title: 'Chocolate Banana Smoothie',
                 image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&h=240&fit=crop',
                 ingredients: ['2 bananas', '2 tbsp cocoa powder', '1 cup almond milk', '1 tbsp peanut butter', '1 tsp vanilla', '1/2 cup ice'],
                 instructions: ['Add bananas and almond milk to blender', 'Add cocoa powder and peanut butter', 'Blend until creamy', 'Add vanilla and ice, blend again'],
-                tags: ['Vegan', 'Dessert', 'Protein']
+                tags: ['Vegan', 'Dessert', 'Protein'],
+                tips: ['Use frozen bananas for a milkshake-like consistency', 'A pinch of cinnamon enhances the chocolate flavor', 'Almond milk can be swapped for any other milk'],
+                healthAffects: ['Aids muscle recovery (protein)', 'Mood-boosting from cocoa', 'Provides lasting energy']
             },
             citrus: {
                 title: 'Citrus Sunrise Smoothie',
                 image: 'https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&q=80',
                 ingredients: ['1 orange peeled', '1/2 grapefruit peeled', '1 tbsp lemon juice', '1 tsp fresh ginger', '1 tbsp honey', '1/2 cup ice'],
                 instructions: ['Peel and segment citrus fruits', 'Add all ingredients to blender', 'Blend until smooth', 'Strain if desired for smoother texture'],
-                tags: ['Vegan', 'Vitamin C', 'Energizing']
+                tags: ['Vegan', 'Vitamin C', 'Energizing'],
+                tips: ['Roll citrus on the counter to maximize juice extraction', 'A small piece of fresh ginger goes a long way', 'Use a high-speed blender to pulverize ginger root'],
+                healthAffects: ['Extremely high in Vitamin C', 'Boosts the immune system', 'Anti-inflammatory from ginger']
             },
             protein: {
                 title: 'Protein Power Smoothie',
                 image: 'https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&h=240&fit=crop',
                 ingredients: ['1 banana', '2 tbsp peanut butter', '1 scoop protein powder', '1/4 cup oats', '1 cup almond milk', '1/2 cup ice'],
                 instructions: ['Add oats to blender first', 'Add banana and peanut butter', 'Add protein powder and almond milk', 'Blend until smooth and creamy'],
-                tags: ['Protein', 'Post-workout', 'Filling']
+                tags: ['Protein', 'Post-workout', 'Filling'],
+                tips: ['Blend oats first to create a fine powder for a smoother texture', 'Use unflavored protein powder to better control the sweetness', 'Add a tablespoon of flax seeds for extra omega-3s'],
+                healthAffects: ['Aids muscle repair and growth', 'Keeps you feeling full for longer', 'Helps stabilize blood sugar levels']
             }
         };
 
@@ -419,10 +448,14 @@
             });
             // Update placeholder based on selected ingredients
             const ingredientInput = document.getElementById('ingredientInput');
+            const clearAllButton = document.getElementById('clearAll');
+
             if (selectedIngredients.length === 0) {
-                ingredientInput.placeholder = 'Type ingredients like banana, spinach, mango...';
+                ingredientInput.placeholder = 'Banana, spinach, mango...';
+                clearAllButton.classList.add('hidden');
             } else {
                 ingredientInput.placeholder = '';
+                clearAllButton.classList.remove('hidden');
             }
         }
 
@@ -488,19 +521,23 @@
                 ingredientsList.appendChild(li);
             });
 
-            // Populate instructions
-            const instructionsList = document.getElementById('modalInstructions');
-            instructionsList.innerHTML = '';
-            recipe.instructions.forEach((instruction, index) => {
+            // Populate pro tips
+            const proTipsList = document.getElementById('modalProTips');
+            proTipsList.innerHTML = '';
+            if (recipe.tips && recipe.tips.length > 0) {
+                recipe.tips.forEach((tip, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'step-enter';
+                    li.style.animationDelay = `${index * 0.1}s`;
+                    li.textContent = tip;
+                    proTipsList.appendChild(li);
+                });
+            } else {
                 const li = document.createElement('li');
-                li.className = 'flex items-start gap-3 step-enter';
-                li.style.animationDelay = `${index * 0.1}s`;
-                li.innerHTML = `
-                    <span class="flex-shrink-0 w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm font-medium">${index + 1}</span>
-                    <span>${instruction}</span>
-                `;
-                instructionsList.appendChild(li);
-            });
+                li.className = 'text-gray-500';
+                li.textContent = 'No pro tips available.';
+                proTipsList.appendChild(li);
+            }
 
             // Populate tags
             const tagsList = document.getElementById('modalTags');
@@ -508,7 +545,7 @@
             recipe.tags.forEach(tag => {
                 const color = tagColors[tag] || 'gray';
                 const span = document.createElement('span');
-                span.className = `px-3 py-1 bg-${color}-800 text-white text-sm font-medium rounded-full`;
+                span.className = `px-3 py-1 bg-transparent border border-${color}-500 text-${color}-500 text-sm font-medium rounded-full`;
                 span.textContent = tag;
                 tagsList.appendChild(span);
             });
@@ -533,6 +570,28 @@
                 closeRecipeModal();
             }
         });
+
+        // Helper: Ingredient health effect descriptions
+        const ingredientHealthEffects = {
+            'banana': 'Rich in potassium, supports heart health and energy.',
+            'mixed berries': 'High in antioxidants, boosts immune system.',
+            'milk': 'Good source of calcium for strong bones.',
+            'yogurt': 'Contains probiotics for gut health.',
+            'honey': 'Natural sweetener with antimicrobial properties.',
+            'ice cubes': 'Adds hydration and cools the body.',
+            'fresh spinach': 'Loaded with iron and vitamins for energy.',
+            'avocado': 'Healthy fats for brain and skin.',
+            'coconut water': 'Hydrates and replenishes electrolytes.',
+            'chia seeds': 'High in fiber and omega-3 fatty acids.',
+            'lime juice': 'Vitamin C boost and aids digestion.',
+            'pineapple chunks': 'Contains bromelain for digestion.',
+            'mango': 'Rich in vitamin A and C for immunity.',
+            'coconut milk': 'Healthy fats and creamy texture.',
+            'shredded coconut': 'Provides fiber and healthy fats.',
+            'natural peanut butter': 'Protein and healthy fats for satiety.',
+            'unsweetened cocoa powder': 'Antioxidants and mood booster.',
+            'milk or yogurt': 'Calcium and protein for bones and muscles.'
+        };
     </script>
 </body>
 </html>
