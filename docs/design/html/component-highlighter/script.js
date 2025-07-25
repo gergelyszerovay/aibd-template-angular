@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button id="component-viewer-close" title="Close">&times;</button>
             </div>
             <div class="component-viewer-controls">
-                <input type="checkbox" id="select-all-components">
-                <label for="select-all-components">Select All</label>
+                <div>
+                    <button id="select-all-btn" title="Select All / None"><i data-lucide="check-square"></i></button>
+                    <button id="expand-all-btn" title="Expand All"><i data-lucide="unfold-vertical"></i></button>
+                    <button id="collapse-all-btn" title="Collapse All"><i data-lucide="fold-vertical"></i></button>
+                    <button id="refresh-component-tree" title="Refresh Tree">⟳</button>
+                </div>
             </div>
             <ul id="component-viewer-list" class="component-viewer-list"></ul>
         </div>
@@ -24,14 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const popup = document.getElementById('component-viewer-popup');
     const closeButton = document.getElementById('component-viewer-close');
     const componentList = document.getElementById('component-viewer-list');
-    const selectAllCheckbox = document.getElementById('select-all-components');
+    const refreshButton = document.getElementById('refresh-component-tree');
+    const collapseAllButton = document.getElementById('collapse-all-btn');
+    const expandAllButton = document.getElementById('expand-all-btn');
+    const selectAllButton = document.getElementById('select-all-btn');
 
-    if (!toggleButton || !popup || !closeButton || !componentList || !selectAllCheckbox) {
+
+    if (!toggleButton || !popup || !closeButton || !componentList || !refreshButton || !collapseAllButton || !expandAllButton || !selectAllButton) {
         console.error('Component highlighter UI elements could not be created.');
         return;
     }
 
+    // Stop clicks inside the popup from propagating to the page
+    popup.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
     let isPopupOpen = false;
+    let checkboxIdCounter = 0; // Counter for unique checkbox IDs
 
     // 3. Dynamically build the component instance tree from the DOM's hierarchy
     function buildTreeFromDOM() {
@@ -63,31 +77,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // 4. Populate the list from the generated component tree
-    const componentTree = buildTreeFromDOM();
-    let checkboxIdCounter = 0; // Counter for unique checkbox IDs
-
-    function buildComponentList(nodes, level) {
+    function buildComponentList(nodes, parentElement, level) {
         nodes.forEach(node => {
             const name = node.name;
             const listItem = document.createElement('li');
             const checkboxId = `comp-check-${checkboxIdCounter++}`;
+            const hasChildren = node.children.length > 0;
 
             listItem.classList.add(`level-${level}`);
+            listItem.classList.add('is-collapsed');
+
             listItem.innerHTML = `
-                <input type="checkbox" id="${checkboxId}" data-component-name="${name}" class="component-checkbox">
-                <label for="${checkboxId}">${name}</label>
+                <div class="item-content">
+                    <span class="toggle">${hasChildren ? '▶' : ''}</span>
+                    <input type="checkbox" id="${checkboxId}" data-component-name="${name}" class="component-checkbox">
+                    <label for="${checkboxId}">${name}</label>
+                </div>
             `;
-            componentList.appendChild(listItem);
             
-            if (node.children.length > 0) {
-                buildComponentList(node.children, level + 1);
+            if (hasChildren) {
+                const childrenContainer = document.createElement('ul');
+                childrenContainer.className = 'children-container';
+                buildComponentList(node.children, childrenContainer, level + 1);
+                listItem.appendChild(childrenContainer);
             }
+
+            parentElement.appendChild(listItem);
         });
     }
 
-    buildComponentList(componentTree, 0);
+    function rebuildTree() {
+        // Clear the current list
+        componentList.innerHTML = '';
+        checkboxIdCounter = 0;
 
-    // 5. Toggle popup visibility
+        // Rebuild the tree and the list
+        const componentTree = buildTreeFromDOM();
+        buildComponentList(componentTree, componentList, 0);
+        // Render any new Lucide icons
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    }
+
+    // Initial build
+    rebuildTree();
+
+    // Event listener for the refresh button
+    refreshButton.addEventListener('click', rebuildTree);
+
+    // Event listeners for expand/collapse all
+    collapseAllButton.addEventListener('click', () => {
+        componentList.querySelectorAll('li').forEach(li => {
+            if (li.querySelector('.children-container')) {
+                li.classList.add('is-collapsed');
+                li.querySelector('.toggle').textContent = '▶';
+            }
+        });
+    });
+
+    expandAllButton.addEventListener('click', () => {
+        componentList.querySelectorAll('li').forEach(li => {
+            if (li.querySelector('.children-container')) {
+                li.classList.remove('is-collapsed');
+                li.querySelector('.toggle').textContent = '▼';
+            }
+        });
+    });
+
+    // Handle "Select All" checkbox
+    let areAllSelected = false;
+    selectAllButton.addEventListener('click', () => {
+        areAllSelected = !areAllSelected;
+        const allCheckboxes = componentList.querySelectorAll('.component-checkbox');
+        
+        allCheckboxes.forEach(checkbox => {
+            checkbox.checked = areAllSelected;
+            highlightComponent(checkbox.dataset.componentName, areAllSelected);
+        });
+    });
+
+    // Add event listener for toggling collapse/expand
+    componentList.addEventListener('click', (e) => {
+        const itemContent = e.target.closest('.item-content');
+        if (itemContent && e.target.tagName !== 'INPUT') {
+            const listItem = itemContent.parentElement;
+            if (listItem.querySelector('.children-container')) {
+                listItem.classList.toggle('is-collapsed');
+                const toggle = listItem.querySelector('.toggle');
+                toggle.textContent = listItem.classList.contains('is-collapsed') ? '▶' : '▼';
+            }
+        }
+    });
+
+    // 6. Toggle popup visibility
     toggleButton.addEventListener('click', () => {
         isPopupOpen = !isPopupOpen;
         popup.style.display = isPopupOpen ? 'block' : 'none';
@@ -100,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.style.background = '#000000';
     });
 
-    // 6. Handle highlighting on checkbox change
+    // 7. Handle highlighting on checkbox change
     componentList.addEventListener('change', (e) => {
         if (e.target.type === 'checkbox') {
             const componentName = e.target.dataset.componentName;
@@ -108,17 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             highlightComponent(componentName, shouldHighlight);
         }
-    });
-
-    // 7. Handle "Select All" checkbox
-    selectAllCheckbox.addEventListener('change', (e) => {
-        const shouldSelectAll = e.target.checked;
-        const allCheckboxes = componentList.querySelectorAll('.component-checkbox');
-        
-        allCheckboxes.forEach(checkbox => {
-            checkbox.checked = shouldSelectAll;
-            highlightComponent(checkbox.dataset.componentName, shouldSelectAll);
-        });
     });
 
     function highlightComponent(name, highlight) {
