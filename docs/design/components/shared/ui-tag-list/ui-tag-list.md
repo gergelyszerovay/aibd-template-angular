@@ -27,12 +27,4 @@ None. This is a display-only component.
 
 This component is implemented in the `cards1.html` design draft. You can find examples of its usage by searching for the `data-component="UiTagList"` attribute in that file.
 
-The primary example is in the recipe card:
-
-```html
-<div class="flex flex-wrap gap-2" data-component="UiTagList">
-  <span class="px-2 py-1 bg-emerald-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Vegan</span>
-  <span class="px-2 py-1 bg-orange-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Summer</span>
-  <span class="px-2 py-1 bg-purple-800 text-white text-xs font-medium rounded-full" data-component="UiTag">Breakfast</span>
-</div>
-```
+The primary example is in the recipe card.
