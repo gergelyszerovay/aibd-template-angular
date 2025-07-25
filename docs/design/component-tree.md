@@ -4,6 +4,7 @@
 - `UiTag (shared)`
 - `UiTagList (shared)`
   - `UiTag (xN) (shared)`
+- `UiAutocompleteDropdown (shared)`
 
 ### App (Application Structure)
 
@@ -11,6 +12,7 @@
   - `UiHeroSection`
   - `UiSearchIngredients`
     - `UiIngredientChip (xN) (shared)`
+    - `UiAutocompleteDropdown (shared)`
   - `(Conditional)`
     - `UiRecipeGrid`
       - `UiRecipeCard (xN)`

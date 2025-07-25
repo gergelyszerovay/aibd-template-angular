@@ -12,6 +12,7 @@ The `UiSearchIngredients` component provides the main search interface for the a
 *   `MainLayout (Smart Component)`
     *   `UiSearchIngredients`
         *   `UiIngredientChip (xN) (shared)`
+        *   `UiAutocompleteDropdown`
 ```
 
 ## Inputs (Props)
@@ -48,6 +49,6 @@ The `UiSearchIngredients` component provides the main search interface for the a
 
 - **Description:** The state when the user clicks into the text input and begins typing.
 - **Visuals:**
-  - A dropdown list of suggested ingredients appears below the search bar.
+  - The `UiAutocompleteDropdown` component is rendered and displays a list of suggested ingredients.
   - The search input has a subtle glow effect to indicate focus.
   - Suggestions are filtered based on the user's input.
